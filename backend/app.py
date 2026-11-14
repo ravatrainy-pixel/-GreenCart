@@ -6,9 +6,6 @@ import os
 import math
 import base64
 
-import torch
-from transformers import CLIPModel, CLIPProcessor
-
 from datetime import datetime, timezone
 from datetime import timedelta
 from bson import ObjectId
@@ -28,15 +25,27 @@ from pymongo import MongoClient
 from pymongo.errors import PyMongoError
 from werkzeug.security import generate_password_hash, check_password_hash
 
+clip_processor = None
+clip_model = None
+CLIP_DEVICE = "cpu"
 
-CLIP_MODEL_NAME = "openai/clip-vit-base-patch32"
+def load_clip_model():
+    global clip_processor, clip_model, CLIP_DEVICE
 
-clip_processor = CLIPProcessor.from_pretrained(CLIP_MODEL_NAME)
-clip_model = CLIPModel.from_pretrained(CLIP_MODEL_NAME)
-clip_model.eval()
+    if clip_model is None:
+        import torch
+        from transformers import CLIPModel, CLIPProcessor
 
-CLIP_DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
-clip_model = clip_model.to(CLIP_DEVICE)
+        model_name = "openai/clip-vit-base-patch32"
+
+        clip_processor = CLIPProcessor.from_pretrained(model_name)
+        clip_model = CLIPModel.from_pretrained(model_name)
+        clip_model.eval()
+
+        CLIP_DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
+        clip_model = clip_model.to(CLIP_DEVICE)
+
+    return torch, clip_processor, clip_model
 
 # --------------------------------------------------
 # 1. ENVIRONMENT CONFIGURATION
@@ -810,6 +819,13 @@ def get_admin_ratings():
 
 @app.route("/api/products/visual-search", methods=["POST"])
 def visual_product_search():
+        try:
+        torch, clip_processor, clip_model = load_clip_model()
+    except ImportError:
+        return error_response(
+            "Visual search is temporarily unavailable.",
+            503,
+        )
     if "image" not in request.files:
         return error_response("Please upload an image.")
 

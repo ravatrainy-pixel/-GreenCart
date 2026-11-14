@@ -1,7 +1,8 @@
-
 Flask
 Flask-Cors
 pymongo
 dnspython
 python-dotenv
 gunicorn
+Pillow
+Flask-JWT-Extended
