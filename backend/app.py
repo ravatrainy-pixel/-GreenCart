@@ -819,13 +819,14 @@ def get_admin_ratings():
 
 @app.route("/api/products/visual-search", methods=["POST"])
 def visual_product_search():
-        try:
+    try:
         torch, clip_processor, clip_model = load_clip_model()
     except ImportError:
         return error_response(
             "Visual search is temporarily unavailable.",
             503,
         )
+
     if "image" not in request.files:
         return error_response("Please upload an image.")
 
