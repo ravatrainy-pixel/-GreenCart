@@ -1,0 +1,547 @@
+
+/* ========================================
+   GreenCart Admin - Edit Product Page
+   File: src/styles/AdminEditProduct.css
+======================================== */
+
+/* Main page */
+.edit-product-page {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+  box-sizing: border-box;
+  color: #1f2937;
+}
+
+/* Header */
+.edit-product-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.edit-product-header h1 {
+  margin: 0;
+  color: #166534;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.edit-product-header p {
+  margin: 8px 0 0;
+  color: #6b7280;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Back button */
+.edit-product-back {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #374151;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.edit-product-back:hover {
+  background: #f3f4f6;
+  border-color: #9ca3af;
+}
+
+/* Form container */
+.edit-product-form {
+  width: 100%;
+  padding: 28px;
+  box-sizing: border-box;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
+}
+
+/* Form sections */
+.edit-product-section {
+  margin-bottom: 28px;
+}
+
+.edit-product-section h2 {
+  margin: 0 0 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #e5e7eb;
+  color: #166534;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+/* Two-column grid */
+.edit-product-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+/* Form field */
+.edit-product-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.edit-product-field label {
+  color: #374151;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.edit-product-field label span {
+  color: #dc2626;
+}
+
+/* Inputs, dropdowns and textareas */
+.edit-product-field input,
+.edit-product-field select,
+.edit-product-field textarea {
+  width: 100%;
+  min-height: 44px;
+  padding: 11px 12px;
+  box-sizing: border-box;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  outline: none;
+  background: #ffffff;
+  color: #1f2937;
+  font-family: inherit;
+  font-size: 14px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.edit-product-field input:focus,
+.edit-product-field select:focus,
+.edit-product-field textarea:focus {
+  border-color: #16a34a;
+  box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.12);
+}
+
+.edit-product-field input::placeholder,
+.edit-product-field textarea::placeholder {
+  color: #9ca3af;
+}
+
+.edit-product-field select {
+  cursor: pointer;
+}
+
+.edit-product-field textarea {
+  min-height: 120px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+.edit-product-field small {
+  color: #6b7280;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* Full-width field */
+.edit-product-full-width {
+  grid-column: 1 / -1;
+}
+
+/* Description */
+.edit-product-description {
+  margin-top: 22px;
+}
+
+.edit-product-description textarea {
+  width: 100%;
+  padding: 12px;
+  box-sizing: border-box;
+  border: 1px solid #d1d5db;
+  border-radius: 7px;
+  font: inherit;
+  resize: vertical;
+}
+
+/* Product status */
+.edit-product-status {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.edit-product-status-options {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+.edit-product-status-options label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.edit-product-status-options input {
+  width: 16px;
+  min-height: auto;
+  height: 16px;
+  margin: 0;
+  accent-color: #16a34a;
+}
+
+/* Image upload */
+.edit-product-image-upload {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 20px;
+  border: 2px dashed #bbf7d0;
+  border-radius: 10px;
+  background: #f7fef8;
+}
+
+.edit-product-image-upload input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background: #ffffff;
+  font-size: 13px;
+}
+
+.edit-product-image-upload input[type="file"]::file-selector-button {
+  margin-right: 12px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  background: #dcfce7;
+  color: #166534;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.edit-product-image-upload input[type="file"]::file-selector-button:hover {
+  background: #bbf7d0;
+}
+
+/* Current and updated image preview */
+.edit-product-image-preview {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.edit-product-image-preview img {
+  display: block;
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  background: #ffffff;
+}
+
+.edit-product-image-preview p {
+  margin: 0;
+  color: #6b7280;
+  font-size: 12px;
+}
+
+/* Error message */
+.edit-product-error {
+  margin-bottom: 20px;
+  padding: 12px 14px;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  background: #fef2f2;
+  color: #b91c1c;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* Success message */
+.edit-product-success {
+  margin-bottom: 20px;
+  padding: 12px 14px;
+  border: 1px solid #bbf7d0;
+  border-radius: 8px;
+  background: #f0fdf4;
+  color: #166534;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* Bottom action buttons */
+.edit-product-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+  padding-top: 22px;
+  border-top: 1px solid #e5e7eb;
+}
+
+/* Save changes button */
+.edit-product-submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 11px 24px;
+  border: 1px solid #15803d;
+  border-radius: 8px;
+  background: #15803d;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.edit-product-submit:hover {
+  background: #166534;
+  transform: translateY(-1px);
+}
+
+.edit-product-submit:active {
+  transform: translateY(0);
+}
+
+/* Cancel button */
+.edit-product-cancel {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 11px 22px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #374151;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.edit-product-cancel:hover {
+  background: #f3f4f6;
+}
+
+/* Disabled controls */
+.edit-product-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.edit-product-field input:disabled,
+.edit-product-field select:disabled,
+.edit-product-field textarea:disabled {
+  background: #f3f4f6;
+  color: #9ca3af;
+  cursor: not-allowed;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .edit-product-page {
+    padding: 18px;
+  }
+
+  .edit-product-header h1 {
+    font-size: 24px;
+  }
+
+  .edit-product-form {
+    padding: 22px;
+  }
+
+  .edit-product-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .edit-product-full-width {
+    grid-column: auto;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .edit-product-page {
+    padding: 12px;
+  }
+
+  .edit-product-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .edit-product-header h1 {
+    font-size: 22px;
+  }
+
+  .edit-product-form {
+    padding: 16px;
+    border-radius: 10px;
+  }
+
+  .edit-product-section h2 {
+    font-size: 16px;
+  }
+
+  .edit-product-actions {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+
+  .edit-product-submit,
+  .edit-product-cancel,
+  .edit-product-back {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .edit-product-image-preview img {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+/* ========================================
+   Multiple Product Images Gallery
+======================================== */
+
+.edit-product-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 18px;
+  margin-top: 22px;
+}
+
+.edit-product-gallery-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 10px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
+}
+
+.edit-product-gallery-item > img {
+  display: block;
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  background: #f3f4f6;
+}
+
+.edit-product-main-badge {
+  align-self: flex-start;
+  margin-top: 10px;
+  padding: 5px 9px;
+  border-radius: 20px;
+  background: #dcfce7;
+  color: #166534;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.edit-product-gallery-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 12px;
+}
+
+.edit-product-make-main,
+.edit-product-remove-image {
+  flex: 1;
+  min-height: 34px;
+  padding: 7px 9px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #374151;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.edit-product-make-main:hover {
+  border-color: #86efac;
+  background: #f0fdf4;
+  color: #166534;
+}
+
+.edit-product-remove-image {
+  border-color: #fecaca;
+  color: #b91c1c;
+}
+
+.edit-product-remove-image:hover {
+  background: #fef2f2;
+}
+
+.edit-product-make-main:disabled,
+.edit-product-remove-image:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.edit-product-no-images {
+  margin: 16px 0 0;
+  padding: 18px;
+  border: 1px dashed #d1d5db;
+  border-radius: 8px;
+  background: #f9fafb;
+  color: #6b7280;
+  font-size: 13px;
+  text-align: center;
+}
+
+/* Gallery on smaller screens */
+@media (max-width: 480px) {
+  .edit-product-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .edit-product-gallery-item > img {
+    height: 120px;
+  }
+
+  .edit-product-gallery-actions {
+    flex-direction: column;
+  }
+}

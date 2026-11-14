@@ -1,0 +1,93 @@
+
+.product-rating {
+  margin-top: 24px;
+  padding: 20px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: #ffffff;
+}
+
+.product-rating h3 {
+  margin: 0 0 14px;
+  color: #243b2b;
+}
+
+.rating-summary {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.rating-average {
+  font-size: 22px;
+  font-weight: 700;
+  color: #243b2b;
+}
+
+.rating-stars-display {
+  color: #f5a623;
+  font-size: 21px;
+  letter-spacing: 2px;
+}
+
+.rating-count {
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.rating-prompt {
+  margin: 20px 0 8px;
+  color: #374151;
+}
+
+.rating-input {
+  display: flex;
+  gap: 5px;
+}
+
+.rating-star {
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: #d1d5db;
+  font-size: 34px;
+  cursor: pointer;
+  transition: color 0.15s ease, transform 0.15s ease;
+}
+
+.rating-star.active {
+  color: #f5a623;
+}
+
+.rating-star:hover {
+  transform: scale(1.12);
+}
+
+.rating-star:focus-visible {
+  outline: 2px solid #267a45;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.submit-rating-button {
+  margin-top: 14px;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 7px;
+  background: #267a45;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.submit-rating-button:disabled {
+  background: #a7b7aa;
+  cursor: not-allowed;
+}
+
+.rating-message {
+  margin: 12px 0 0;
+  color: #267a45;
+  font-size: 14px;
+}

@@ -1,0 +1,49 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+
+  background:
+    radial-gradient(
+      circle at 5% 10%,
+      rgba(196, 224, 200, 0.45),
+      transparent 18%
+    ),
+    radial-gradient(
+      circle at 95% 30%,
+      rgba(213, 235, 215, 0.45),
+      transparent 20%
+    ),
+    radial-gradient(
+      circle at 8% 75%,
+      rgba(205, 230, 209, 0.35),
+      transparent 18%
+    ),
+    #f8fcf8;
+
+  color: #1f2933;
+
+  overflow-x: hidden;
+}
+
+button,
+input {
+  font-family: inherit;
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}

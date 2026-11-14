@@ -1,0 +1,23 @@
+# Dependencies and build files
+node_modules/
+dist/
+build/
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# ZIP backup
+frontend-zip.zip
+
+# Logs
+*.log
+
+desktop.ini

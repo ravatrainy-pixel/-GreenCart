@@ -1,0 +1,147 @@
+/* =========================================
+   CART NOTIFICATION
+========================================= */
+
+.cart-notification {
+  position: fixed;
+
+  top: 95px;
+  right: 30px;
+
+  z-index: 9999;
+
+  min-width: 300px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 14px 18px;
+
+  background: #ffffff;
+
+  border: 1px solid #d8e6dc;
+
+  border-radius: 12px;
+
+  box-shadow: 0 10px 30px rgba(39, 74, 50, 0.15);
+
+  animation:
+    notificationSlideIn 0.3s ease,
+    notificationFadeOut 0.4s ease 2.1s forwards;
+}
+
+
+/* =========================================
+   CHECK ICON
+========================================= */
+
+.notification-check {
+  width: 38px;
+  height: 38px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #e5f4e9;
+
+  color: #287a45;
+
+  font-size: 19px;
+  font-weight: 700;
+}
+
+
+/* =========================================
+   TEXT
+========================================= */
+
+.notification-content {
+  display: flex;
+  flex-direction: column;
+
+  gap: 3px;
+
+  min-width: 0;
+}
+
+.notification-content strong {
+  color: #26382d;
+
+  font-size: 14px;
+}
+
+.notification-content span {
+  max-width: 210px;
+
+  overflow: hidden;
+
+  color: #718078;
+
+  font-size: 12px;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================
+   ANIMATION
+========================================= */
+
+@keyframes notificationSlideIn {
+
+  from {
+    opacity: 0;
+
+    transform: translateX(30px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateX(0);
+  }
+
+}
+
+
+@keyframes notificationFadeOut {
+
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+
+    transform: translateX(30px);
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .cart-notification {
+    top: 85px;
+    right: 15px;
+    left: 15px;
+
+    min-width: 0;
+
+    width: auto;
+  }
+
+}

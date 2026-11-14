@@ -1,0 +1,851 @@
+/* =====================================================
+   AI RECOMMENDATION PAGE
+===================================================== */
+
+.ai-recommendation-page {
+  min-height: 100vh;
+
+  padding: 60px 7% 90px;
+
+  background:
+    radial-gradient(
+      circle at 8% 10%,
+      rgba(215, 238, 219, 0.45),
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at 92% 35%,
+      rgba(220, 241, 224, 0.45),
+      transparent 25%
+    ),
+    #f8fbf8;
+
+  box-sizing: border-box;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.ai-page-hero {
+  max-width: 850px;
+
+  margin: 0 auto 45px;
+
+  text-align: center;
+}
+
+.ai-page-tag {
+  display: inline-block;
+
+  margin-bottom: 12px;
+
+  color: #287a45;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+}
+
+.ai-page-hero h1 {
+  margin: 0 0 15px;
+
+  color: #203429;
+
+  font-size: 48px;
+  font-weight: 750;
+
+  line-height: 1.15;
+}
+
+.ai-page-hero h1 span {
+  color: #287a45;
+}
+
+.ai-page-hero p {
+  max-width: 650px;
+
+  margin: 0 auto;
+
+  color: #6e7b73;
+
+  font-size: 16px;
+
+  line-height: 1.7;
+}
+
+
+/* =====================================================
+   MAIN BOX
+===================================================== */
+
+.ai-recommendation-box {
+  max-width: 1050px;
+
+  margin: 0 auto;
+
+  padding: 38px;
+
+  background: #ffffff;
+
+  border: 1px solid #dce8df;
+
+  border-radius: 24px;
+
+  box-shadow:
+    0 15px 40px rgba(39, 74, 50, 0.07);
+
+  box-sizing: border-box;
+}
+
+
+/* =====================================================
+   STEP
+===================================================== */
+
+.ai-step {
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  margin-bottom: 22px;
+}
+
+.ai-step-number {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #e9f5eb;
+
+  color: #287a45;
+
+  font-size: 12px;
+  font-weight: 750;
+}
+
+.ai-step h2 {
+  margin: 0 0 3px;
+
+  color: #293b30;
+
+  font-size: 20px;
+}
+
+.ai-step p {
+  margin: 0;
+
+  color: #89938d;
+
+  font-size: 13px;
+}
+
+
+/* =====================================================
+   CATEGORY OPTIONS
+===================================================== */
+
+.ai-category-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(5, minmax(0, 1fr));
+
+  gap: 12px;
+
+  margin-bottom: 35px;
+}
+
+.ai-option {
+  min-height: 100px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  padding: 15px 10px;
+
+  border: 1px solid #dce7df;
+
+  border-radius: 14px;
+
+  background: #ffffff;
+
+  color: #536158;
+
+  font-size: 12px;
+  font-weight: 650;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.ai-option span {
+  font-size: 25px;
+}
+
+.ai-option:hover {
+  border-color: #9fc8a9;
+
+  background: #f5faf6;
+
+  transform: translateY(-2px);
+}
+
+.ai-option.active {
+  border-color: #287a45;
+
+  background: #eef8f0;
+
+  color: #287a45;
+
+  box-shadow:
+    0 0 0 2px rgba(40, 122, 69, 0.08);
+}
+
+
+/* =====================================================
+   NEEDS
+===================================================== */
+
+.ai-needs-section {
+  padding-top: 30px;
+
+  border-top: 1px solid #e7eee9;
+}
+
+.ai-needs-grid {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 10px;
+
+  margin-bottom: 30px;
+}
+
+.ai-need {
+  min-height: 42px;
+
+  padding: 0 17px;
+
+  border: 1px solid #dce7df;
+
+  border-radius: 999px;
+
+  background: #ffffff;
+
+  color: #58645d;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.ai-need:hover {
+  border-color: #287a45;
+
+  color: #287a45;
+
+  background: #f4faf5;
+}
+
+.ai-need.active {
+  border-color: #287a45;
+
+  background: #287a45;
+
+  color: #ffffff;
+}
+
+
+/* =====================================================
+   RECOMMEND BUTTON
+===================================================== */
+
+.ai-recommend-button {
+  width: 100%;
+
+  min-height: 52px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 12px;
+
+  border: none;
+
+  border-radius: 10px;
+
+  background: #287a45;
+
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.ai-recommend-button span {
+  font-size: 18px;
+}
+
+.ai-recommend-button:hover:not(:disabled) {
+  background: #1f6338;
+
+  transform: translateY(-1px);
+}
+
+.ai-recommend-button:disabled {
+  background: #b9cdbd;
+
+  cursor: not-allowed;
+}
+
+
+/* =====================================================
+   RESULTS
+===================================================== */
+
+.ai-results {
+  max-width: 1200px;
+
+  margin: 55px auto 0;
+}
+
+.ai-results-heading {
+  margin-bottom: 25px;
+}
+
+.ai-results-heading > div > span {
+  color: #287a45;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 1.4px;
+}
+
+.ai-results-heading h2 {
+  margin: 7px 0 7px;
+
+  color: #26382d;
+
+  font-size: 30px;
+}
+
+.ai-results-heading p {
+  margin: 0;
+
+  color: #78847d;
+
+  font-size: 13px;
+}
+
+.ai-results-heading strong {
+  color: #287a45;
+}
+
+
+/* =====================================================
+   RESULT GRID
+===================================================== */
+
+.ai-results-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 18px;
+}
+
+
+/* =====================================================
+   PRODUCT CARD
+===================================================== */
+
+.ai-product-card {
+  overflow: hidden;
+
+  background: #ffffff;
+
+  border: 1px solid #dfe9e2;
+
+  border-radius: 16px;
+
+  transition: 0.25s ease;
+}
+
+.ai-product-card:hover {
+  transform: translateY(-5px);
+
+  border-color: #c3d8c8;
+
+  box-shadow:
+    0 12px 30px rgba(39, 74, 50, 0.09);
+}
+
+
+/* =====================================================
+   PRODUCT IMAGE
+===================================================== */
+
+.ai-product-image {
+  width: 100%;
+
+  height: 220px;
+
+  overflow: hidden;
+
+  background: #f1f7f3;
+}
+
+.ai-product-image img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition: transform 0.3s ease;
+}
+
+.ai-product-card:hover
+.ai-product-image img {
+  transform: scale(1.04);
+}
+
+
+/* =====================================================
+   PRODUCT INFO
+===================================================== */
+
+.ai-product-info {
+  padding: 16px;
+}
+
+.ai-product-info > span {
+  color: #287a45;
+
+  font-size: 9px;
+  font-weight: 700;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.8px;
+}
+
+.ai-product-info h3 {
+  margin: 7px 0 8px;
+
+  color: #293a30;
+
+  font-size: 15px;
+
+  line-height: 1.35;
+}
+
+.ai-product-info p {
+  min-height: 38px;
+
+  margin: 0 0 14px;
+
+  color: #7a867f;
+
+  font-size: 11px;
+
+  line-height: 1.5;
+}
+
+
+/* =====================================================
+   PRODUCT BOTTOM
+===================================================== */
+
+.ai-product-bottom {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 8px;
+}
+
+.ai-product-bottom strong {
+  color: #287a45;
+
+  font-size: 17px;
+}
+
+.ai-product-bottom a {
+  color: #287a45;
+
+  text-decoration: none;
+
+  font-size: 11px;
+  font-weight: 650;
+}
+
+.ai-product-bottom a:hover {
+  text-decoration: underline;
+}
+
+
+/* =====================================================
+   NO RESULTS
+===================================================== */
+
+.ai-no-results {
+  padding: 55px 25px;
+
+  text-align: center;
+
+  background: #ffffff;
+
+  border: 1px dashed #cbdccf;
+
+  border-radius: 18px;
+}
+
+.ai-no-results > span {
+  font-size: 35px;
+}
+
+.ai-no-results h3 {
+  margin: 12px 0 7px;
+
+  color: #293b30;
+
+  font-size: 20px;
+}
+
+.ai-no-results p {
+  max-width: 450px;
+
+  margin: 0 auto;
+
+  color: #78847d;
+
+  font-size: 13px;
+
+  line-height: 1.6;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1000px) {
+
+  .ai-recommendation-page {
+    padding-left: 4%;
+    padding-right: 4%;
+  }
+
+  .ai-category-grid {
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+  }
+
+  .ai-results-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+  .ai-recommendation-page {
+    padding: 35px 15px 60px;
+  }
+
+  .ai-page-hero {
+    margin-bottom: 30px;
+  }
+
+  .ai-page-hero h1 {
+    font-size: 32px;
+  }
+
+  .ai-page-hero p {
+    font-size: 14px;
+  }
+
+  .ai-recommendation-box {
+    padding: 22px 18px;
+
+    border-radius: 18px;
+  }
+
+  .ai-step {
+    gap: 11px;
+  }
+
+  .ai-step-number {
+    width: 36px;
+    height: 36px;
+  }
+
+  .ai-step h2 {
+    font-size: 17px;
+  }
+
+  .ai-step p {
+    font-size: 11px;
+  }
+
+  .ai-category-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 9px;
+  }
+
+  .ai-option {
+    min-height: 90px;
+
+    font-size: 11px;
+  }
+
+  .ai-option span {
+    font-size: 22px;
+  }
+
+  .ai-needs-grid {
+    gap: 8px;
+  }
+
+  .ai-need {
+    min-height: 39px;
+
+    padding: 0 13px;
+
+    font-size: 12px;
+  }
+
+  .ai-recommend-button {
+    min-height: 50px;
+
+    font-size: 13px;
+  }
+
+  .ai-results {
+    margin-top: 35px;
+  }
+
+  .ai-results-heading h2 {
+    font-size: 24px;
+  }
+
+  .ai-results-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 10px;
+  }
+
+  .ai-product-image {
+    height: 170px;
+  }
+
+  .ai-product-info {
+    padding: 11px;
+  }
+
+  .ai-product-info h3 {
+    font-size: 13px;
+  }
+
+  .ai-product-info p {
+    font-size: 10px;
+  }
+
+  .ai-product-bottom strong {
+    font-size: 14px;
+  }
+
+  .ai-product-bottom a {
+    font-size: 9px;
+  }
+
+}
+
+
+/* =====================================================
+   SMALL PHONE
+===================================================== */
+
+@media (max-width: 380px) {
+
+  .ai-page-hero h1 {
+    font-size: 28px;
+  }
+
+  .ai-category-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ai-results-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+/* =====================================================
+   AI SHOPPING ASSISTANT
+===================================================== */
+
+.ai-assistant-box {
+  max-width: 1050px;
+  margin: 35px auto 0;
+  padding: 32px;
+  background: #ffffff;
+  border: 1px solid #dce8df;
+  border-radius: 24px;
+  box-shadow: 0 15px 40px rgba(39, 74, 50, 0.06);
+  box-sizing: border-box;
+}
+
+.ai-assistant-heading {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 25px;
+}
+
+.ai-assistant-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  background: #e9f5eb;
+  border-radius: 15px;
+  font-size: 27px;
+}
+
+.ai-assistant-heading h2 {
+  margin: 7px 0;
+  color: #203429;
+  font-size: 25px;
+}
+
+.ai-assistant-heading p {
+  margin: 0;
+  color: #78847d;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.ai-assistant-box > label,
+.ai-budget-fields label {
+  display: block;
+  margin-bottom: 8px;
+  color: #293b30;
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.ai-assistant-box textarea,
+.ai-budget-fields input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 13px 14px;
+  border: 1px solid #dce7df;
+  border-radius: 10px;
+  background: #fbfdfb;
+  color: #293b30;
+  font: inherit;
+  outline: none;
+}
+
+.ai-assistant-box textarea {
+  display: block;
+  margin-bottom: 20px;
+  resize: vertical;
+}
+
+.ai-assistant-box textarea:focus,
+.ai-budget-fields input:focus {
+  border-color: #287a45;
+  box-shadow: 0 0 0 3px rgba(40, 122, 69, 0.08);
+}
+
+.ai-budget-fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.ai-assistant-results {
+  margin-top: 30px;
+  padding-top: 25px;
+  border-top: 1px solid #e7eee9;
+}
+
+.ai-assistant-results > h3 {
+  margin: 0 0 20px;
+  color: #26382d;
+  font-size: 22px;
+}
+
+@media (max-width: 600px) {
+  .ai-assistant-box {
+    padding: 22px 18px;
+    border-radius: 18px;
+  }
+
+  .ai-assistant-heading {
+    gap: 12px;
+  }
+
+  .ai-assistant-heading h2 {
+    font-size: 21px;
+  }
+
+  .ai-assistant-heading p {
+    font-size: 12px;
+  }
+
+  .ai-budget-fields {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+}
